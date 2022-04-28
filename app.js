@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           audio: true
       };
 
-      navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+      navigator.mediaDevices.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 
       function onMediaSuccess(stream) {
         	status.innerHTML = "Media success.";
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           mediaRecorder.ondataavailable = function (blob) {
               // POST/PUT "Blob" using FormData/XHR2
               var blobURL = URL.createObjectURL(blob);
-              document.write('<a href="' + blobURL + '">' + blobURL + '</a>');
+              document.write('<div><a href="' + blobURL + '">' + blobURL + '</a></div>');
           };
           mediaRecorder.start(3000);
       }
