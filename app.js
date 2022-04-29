@@ -1,35 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(e){
+  var types = ["video/webm",
+             "audio/webm",
+             "video/webm\;codecs=vp8",
+             "video/webm\;codecs=daala",
+             "video/webm\;codecs=h264",
+             "audio/webm\;codecs=opus",
+             "video/mpeg"];
 
-  const btn = document.getElementById("btn");
-  const status = document.getElementById("status");
-	
-  status.innerHTML = "DOMContentLoaded";
- 
-  btn.addEventListener("click", startRecord);
-  
-  function startRecord(){
-		  status.innerHTML = "DOMContentLoaded";
-      var mediaConstraints = {
-          audio: true
-      };
-
-      navigator.mediaDevices.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-
-      function onMediaSuccess(stream) {
-        	status.innerHTML = "Media success.";
-          var mediaRecorder = new MediaStreamRecorder(stream);
-          mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav
-          mediaRecorder.ondataavailable = function (blob) {
-              // POST/PUT "Blob" using FormData/XHR2
-              var blobURL = URL.createObjectURL(blob);
-              document.write('<div><a href="' + blobURL + '">' + blobURL + '</a></div>');
-          };
-          mediaRecorder.start(3000);
-      }
-
-      function onMediaError(e) {
-        	status.innerHTML = `Media error: ${e}`;
-          console.error('media error', e);
-      }
+  for (var i in types) {
+    var _p = document.createElement("p");
+    _p.innerHTML = "Is " + types[i] + " supported? " + (MediaRecorder.isTypeSupported(types[i]) ? "Maybe!" : "Nope :(")
+    document.body.appendChild(_p);
   }
+
 })
