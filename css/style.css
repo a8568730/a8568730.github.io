@@ -104,3 +104,6 @@ li {
   margin-top: 0.5rem;
   font-size: 80%;
 }
+button:focus, a:focus, input:focus {
+  outline: 4px dotted #e73;
+}
