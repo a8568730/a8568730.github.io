@@ -151,5 +151,6 @@ function createDownloadLink(blob,encoding) {
 
 //helper function
 function __log(e, data) {
-  log.innerHTML += "\n" + e + " " + (data || '');
+  // log.innerHTML += "\n" + e + " " + (data || '');
+  log.innerHTML = e + " " + (data || '');
 }
