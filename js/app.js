@@ -149,8 +149,15 @@ function createDownloadLink(blob,encoding) {
 
 
 
+document.cookie = 'abcrecorder=; Max-age=31536000; Secure';
+const ifcookie = document.cookie.split(';').some(item=>/^abcrecorder/.test(item));
+__log('ifcookie:' + ifcookie);
+
+
 //helper function
 function __log(e, data) {
   // log.innerHTML += "\n" + e + " " + (data || '');
   log.innerHTML = e + " " + (data || '');
 }
+
+
