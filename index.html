@@ -21,15 +21,22 @@
 
 		<p class="mb-5">我是一段純純的文字。從前從前一毛錢……</p>
 
+		<p class="mb-5"><a href="#">我是超連結</a></p>
+
 		<ul>
 			<li><span>清單項目A</span></li>
 			<li><span>清單項目B</span></li>
 		</ul>
 
-		<ol class="mb-5">
+		<ol>
 			<li><span>序號清單C</span></li>
 			<li><span>序號清單D</span></li>
 		</ol>
+
+		<ul class="mb-5">
+			<li><a href="#">清單連結E</a></li>
+			<li><a href="#">清單連結F</a></li>
+		</ul>
 
 		<table class="table">
 			<caption class="caption-top">一般表格</caption>
@@ -81,10 +88,36 @@
 
 		<img alt="教育部辭典LOGO" src="https://sutian.ithuan.tw/static/image/logo/logo.png" class="w-25 mb-5">
 
-		<form class="mb-5">
-			<label for="text-input" class="form-label">一般文字欄位</label>
+		<form class="mt-5 mb-5">
+			<label for="text-input" class="form-label">一般文字欄位：</label>
 			<input type="text" id="text-input" class="form-control mb-2" />
-
+			<fieldset>
+				<legend>孤選選項：</legend>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+				  <label class="form-check-label" for="flexRadioDefault1">
+				    孤選項目甲
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+				  <label class="form-check-label" for="flexRadioDefault2">
+				    孤選項目乙（預設選著）
+				  </label>
+				</div>
+			</fieldset>
+			<div class="form-check mb-2">
+			  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+			  <label class="form-check-label" for="flexCheckDefault">
+			    勾選項目一
+			  </label>
+			</div>
+			<p>簡單select選單：</p>
+			<select class="form-select mb-2" aria-label="簡單select選單">
+			  <option selected>Open this select menu</option>
+			  <option value="1">One</option>
+			  <option value="2">Two</option>
+			</select>
 			<button class="btn btn-primary">按鈕</button>
 		</form>
 	</div>
